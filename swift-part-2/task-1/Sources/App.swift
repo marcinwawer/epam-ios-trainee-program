@@ -12,15 +12,15 @@ fileprivate func runApp() {
 
     print(userManager.registerUser(username: "alice", email: "alice@example.com", password: "secret123"))
     print(userManager.registerUser(username: "bob", email: "bob@example.com", password: "pa$$w0rd"))
-    print(userManager.registerUser(username: "alice", email: "alice2@example.com", password: "newsecret")) // already used login
+    print(userManager.registerUser(username: "alice", email: "alice2@example.com", password: "newsecret")) 
     print()
 
     print(userManager.login(username: "bob", password: "pa$$w0rd")) 
-    print(userManager.login(username: "bob", password: "wrong")) // wrong password
+    print(userManager.login(username: "bob", password: "wrong")) 
     print()
 
     print(userManager.removeUser(username: "alice"))
-    print(userManager.removeUser(username: "alice")) // removing same user again
+    print(userManager.removeUser(username: "alice")) 
     print()
 
     print("current user count:", userManager.userCount)

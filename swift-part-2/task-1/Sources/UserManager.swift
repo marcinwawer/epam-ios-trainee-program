@@ -11,6 +11,7 @@ class UserManager {
         self.users = [:]
     }
 
+
     deinit {
         print("usermanager instance removed from memory, usermanager's users:")
         print(users)
