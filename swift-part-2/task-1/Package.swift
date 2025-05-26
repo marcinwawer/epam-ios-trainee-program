@@ -4,9 +4,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-part-2",
+    name: "task-1",
     targets: [
         .executableTarget(
-            name: "swift-part-2"),
+            name: "task-1"),
     ]
 )
