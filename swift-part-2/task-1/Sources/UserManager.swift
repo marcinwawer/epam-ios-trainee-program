@@ -19,9 +19,11 @@ class UserManager {
 
 
     func registerUser(username: String, email: String, password: String) -> Bool {
-        guard validateUsername(username) else { return false }
-        guard validateEmail(email) else { return false }
-        guard validatePassword(password) else { return false }
+        guard validateUsername(username), 
+            validateEmail(email), 
+            validatePassword(password) else { 
+            return false 
+        }
         
         let newUser = User(username: username, email: email, password: password)
         users[username] = newUser
