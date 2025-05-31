@@ -19,7 +19,7 @@
             "preLaunchTask": "swift: Build Release swift-part-1 (swift-part-1)"
         },
         {
-            "type": "swift",
+            "type": "lldb",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:epam}/swift-part-2",
@@ -28,7 +28,7 @@
             "preLaunchTask": "swift: Build Debug swift-part-2 (swift-part-2)"
         },
         {
-            "type": "swift",
+            "type": "lldb",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:epam}/swift-part-2",
@@ -37,7 +37,7 @@
             "preLaunchTask": "swift: Build Release swift-part-2 (swift-part-2)"
         },
         {
-            "type": "swift",
+            "type": "lldb",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:epam}/swift-part-2/task-2-3",
@@ -46,7 +46,7 @@
             "preLaunchTask": "swift: Build Debug task-2-3 (swift-part-2/task-2-3)"
         },
         {
-            "type": "swift",
+            "type": "lldb",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:epam}/swift-part-2/task-2-3",
@@ -55,7 +55,7 @@
             "preLaunchTask": "swift: Build Release task-2-3 (swift-part-2/task-2-3)"
         },
         {
-            "type": "swift",
+            "type": "lldb",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:epam}/swift-part-2/task-1",
@@ -64,13 +64,49 @@
             "preLaunchTask": "swift: Build Debug task-1 (swift-part-2/task-1)"
         },
         {
-            "type": "swift",
+            "type": "lldb",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:epam}/swift-part-2/task-1",
             "name": "Release task-1 (swift-part-2/task-1)",
             "program": "${workspaceFolder:epam}/swift-part-2/task-1/.build/release/task-1",
             "preLaunchTask": "swift: Build Release task-1 (swift-part-2/task-1)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:epam}/swift-part-3",
+            "name": "Debug swift-part-3 (swift-part-3)",
+            "program": "${workspaceFolder:epam}/swift-part-3/.build/debug/swift-part-3",
+            "preLaunchTask": "swift: Build Debug swift-part-3 (swift-part-3)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:epam}/swift-part-3",
+            "name": "Release swift-part-3 (swift-part-3)",
+            "program": "${workspaceFolder:epam}/swift-part-3/.build/release/swift-part-3",
+            "preLaunchTask": "swift: Build Release swift-part-3 (swift-part-3)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:epam}/swift-part-3/task-1",
+            "name": "Debug task-1 (swift-part-3/task-1)",
+            "program": "${workspaceFolder:epam}/swift-part-3/task-1/.build/debug/task-1",
+            "preLaunchTask": "swift: Build Debug task-1 (swift-part-3/task-1)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:epam}/swift-part-3/task-1",
+            "name": "Release task-1 (swift-part-3/task-1)",
+            "program": "${workspaceFolder:epam}/swift-part-3/task-1/.build/release/task-1",
+            "preLaunchTask": "swift: Build Release task-1 (swift-part-3/task-1)"
         }
     ]
 }
