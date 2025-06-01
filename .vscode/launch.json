@@ -143,6 +143,24 @@
             "name": "Release task-3 (swift-part-3/task-3)",
             "program": "${workspaceFolder:epam}/swift-part-3/task-3/.build/release/task-3",
             "preLaunchTask": "swift: Build Release task-3 (swift-part-3/task-3)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:epam}/swift-part-4/task-1",
+            "name": "Debug task-1 (swift-part-4/task-1)",
+            "program": "${workspaceFolder:epam}/swift-part-4/task-1/.build/debug/task-1",
+            "preLaunchTask": "swift: Build Debug task-1 (swift-part-4/task-1)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:epam}/swift-part-4/task-1",
+            "name": "Release task-1 (swift-part-4/task-1)",
+            "program": "${workspaceFolder:epam}/swift-part-4/task-1/.build/release/task-1",
+            "preLaunchTask": "swift: Build Release task-1 (swift-part-4/task-1)"
         }
     ]
 }
