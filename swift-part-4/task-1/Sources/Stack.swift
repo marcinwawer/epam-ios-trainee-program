@@ -3,6 +3,7 @@ import Foundation
 class Stack<T> {
 
     private class Element {
+        
         let value: T
         var previous: Element?
 
