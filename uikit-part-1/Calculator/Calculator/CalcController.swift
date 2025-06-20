@@ -31,38 +31,30 @@ class CalcController: UIViewController {
         guard let mathOp = sender.currentTitle else { return }
         
         if mathOp == "=" {
-            if let first = firstNumber,
-               let second = Double(inputBuffer),
-               let currentOp = currentOperator,
-               let result = performOperation(currentOp, first, second) {
-                
-                resultsLabel.text = "\(result)"
-                expressionLabel.text = ""
-                firstNumber = nil
-                currentOperator = nil
-                inputBuffer = ""
-            }
+            guard let first = firstNumber,
+                  let second = Double(inputBuffer),
+                  let currentOp = currentOperator,
+                  let result = performOperation(currentOp, first, second)
+            else { return }
+            
+            resultsLabel.text = "\(result)"
+            expressionLabel.text = ""
+            firstNumber = nil
+            currentOperator = nil
+            inputBuffer = ""
         } else {
-            let currentValue = Double(inputBuffer) ?? 0
+            guard let currentValue = Double(inputBuffer) else { return }
             
             if let first = firstNumber, let currentOp = currentOperator {
-                if let result = performOperation(currentOp, first, currentValue) { firstNumber = result }
-                else { return }
+                guard let result = performOperation(currentOp, first, currentValue) else { return }
+                firstNumber = result
             } else {
                 firstNumber = currentValue
             }
             
             currentOperator = mathOp
-            expressionLabel.text = "\(expressionLabel.text ?? "") \(mathOp) "
+            expressionLabel.text = (expressionLabel.text ?? "") + " \(mathOp) "
             inputBuffer = ""
-            
-            if mathOp == "=" {
-                resultsLabel.text = "\(firstNumber ?? 0)"
-                currentOperator = nil
-                firstNumber = nil
-                expressionLabel.text = ""
-                inputBuffer = ""
-            }
         }
     }
     
@@ -128,4 +120,3 @@ extension CalcController {
         currentOperator = nil
     }
 }
-
