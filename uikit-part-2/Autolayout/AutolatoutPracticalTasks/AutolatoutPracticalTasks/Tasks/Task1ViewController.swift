@@ -9,6 +9,7 @@ import UIKit
 
 /// UILabel is not visible even though constraints are set. Fix the issue.
 final class Task1ViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
@@ -16,6 +17,8 @@ final class Task1ViewController: UIViewController {
         let label = UILabel()
         label.text = "Label here"
         label.backgroundColor = .white
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(label)
         NSLayoutConstraint.activate(
