@@ -14,7 +14,10 @@ final class Task2ViewController: UIViewController {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        label.text = """
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua.
+        """
         label.font = .systemFont(ofSize: 36)
         label.numberOfLines = 0
         label.textAlignment = .center
