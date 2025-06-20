@@ -7,8 +7,8 @@
 
 import UIKit
 
-/// UILabel is not visible even though constraints are set. Fix the issue.
-/// 
+// UILabel is not visible even though constraints are set. Fix the issue.
+
 final class Task1ViewController: UIViewController {
     
     override func viewDidLoad() {
