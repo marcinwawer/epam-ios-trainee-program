@@ -72,6 +72,8 @@ class CalcController: UIViewController {
         case "%":
             if let text = expressionLabel.text, let value = Double(text) {
                 resultsLabel.text = "\(value / 100)"
+                expressionLabel.text = ""
+                inputBuffer = ""
             }
         default:
             break
