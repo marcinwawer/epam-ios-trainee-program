@@ -24,8 +24,10 @@ final class Task3ViewController: UIViewController {
     
     private let titleLabel = UILabel()
     private let bodyLabel = UILabel()
+    
     private let usernameField = UITextField()
     private let passwordField = UITextField()
+    
     private let logInButton = UIButton()
 
     private let contentView = UIView()
