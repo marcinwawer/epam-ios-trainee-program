@@ -122,7 +122,11 @@ class PersonalInfoViewController: UIViewController {
     @objc private func didTapConfirmButton() {
         let alert = UIAlertController(
             title: "Confirm Information",
-            message: "Please confirm your name and phone number. Name: \(nameField.text ?? ""), Phone: \(phoneField.text ?? "")",
+            message: """
+            Please confirm your name and phone number.
+            Name: \(nameField.text ?? ""),
+            Phone: \(phoneField.text ?? "")
+            """,
             preferredStyle: .alert
         )
         

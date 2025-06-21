@@ -27,6 +27,7 @@ final class User {
     func clearUserData() {
         name = nil
         phoneNumber = nil
+        notificactionPreference = nil
         isRegistered = false
     }
 }

@@ -27,6 +27,8 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("PROFILE - viewWillAppear")
+        
+        nameLabel.text = User.shared.name ?? "Default"
     }
     
     override func viewDidAppear(_ animated: Bool) {

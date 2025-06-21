@@ -123,6 +123,7 @@ class ConfirmDetailsViewController: UIViewController {
     }
     
     @objc private func didTapStartOver() {
+        User.shared.clearUserData()
         navigationController?.popToRootViewController(animated: true)
     }
     
