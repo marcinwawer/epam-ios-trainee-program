@@ -19,23 +19,32 @@ final class Task4ViewController: UIViewController {
     private let labelOne = UILabel()
     private let labelTwo = UILabel()
     
-    private let stackView = UIStackView()
+    private var verticalConstraints: [NSLayoutConstraint] = []
+    private var horizontalConstraints: [NSLayoutConstraint] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
-        registerForTraitChanges()
         addConstraints()
+        registerForTraitChanges()
+        
+        if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .compact {
+            NSLayoutConstraint.activate(horizontalConstraints)
+        } else {
+            NSLayoutConstraint.activate(verticalConstraints)
+        }
     }
     
     private func registerForTraitChanges() {
         let sizeTraits: [UITrait] = [UITraitVerticalSizeClass.self, UITraitHorizontalSizeClass.self]
         registerForTraitChanges(sizeTraits) { (self: Self, previousTraitCollection: UITraitCollection) in
             if self.traitCollection.horizontalSizeClass == .compact && self.traitCollection.verticalSizeClass == .compact {
-                self.stackView.axis = .horizontal
+                NSLayoutConstraint.deactivate(self.verticalConstraints)
+                NSLayoutConstraint.activate(self.horizontalConstraints)
             } else {
-                self.stackView.axis = .vertical
+                NSLayoutConstraint.deactivate(self.horizontalConstraints)
+                NSLayoutConstraint.activate(self.verticalConstraints)
             }
         }
     }
@@ -57,36 +66,48 @@ final class Task4ViewController: UIViewController {
         labelTwo.translatesAutoresizingMaskIntoConstraints = false
         
         subviewOne.addSubview(labelOne)
+        subviewOne.translatesAutoresizingMaskIntoConstraints = false
         subviewTwo.addSubview(labelTwo)
+        subviewTwo.translatesAutoresizingMaskIntoConstraints = false
         
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        stackView.addArrangedSubview(subviewOne)
-        stackView.addArrangedSubview(subviewTwo)
-        
-        view.addSubview(stackView)
+        view.addSubview(subviewOne)
+        view.addSubview(subviewTwo)
+        subviewOne.addSubview(labelOne)
+        subviewTwo.addSubview(labelTwo)
     }
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-        ])
-        
-        NSLayoutConstraint.activate([
             labelOne.centerXAnchor.constraint(equalTo: subviewOne.centerXAnchor),
-            labelOne.centerYAnchor.constraint(equalTo: subviewOne.centerYAnchor)
+            labelOne.centerYAnchor.constraint(equalTo: subviewOne.centerYAnchor),
+            
+            labelTwo.centerXAnchor.constraint(equalTo: subviewTwo.centerXAnchor),
+            labelTwo.centerYAnchor.constraint(equalTo: subviewTwo.centerYAnchor),
         ])
         
-        NSLayoutConstraint.activate([
-            labelTwo.centerXAnchor.constraint(equalTo: subviewTwo.centerXAnchor),
-            labelTwo.centerYAnchor.constraint(equalTo: subviewTwo.centerYAnchor)
-        ])
+        verticalConstraints = [
+            subviewOne.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            subviewOne.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            subviewOne.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            subviewOne.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5, constant: -10),
+            
+            subviewTwo.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            subviewTwo.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            subviewTwo.topAnchor.constraint(equalTo: subviewOne.bottomAnchor, constant: 10),
+            subviewTwo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        ]
+        
+        horizontalConstraints = [
+            subviewOne.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            subviewOne.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            subviewOne.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            subviewOne.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.5, constant: -10),
+            
+            subviewTwo.leadingAnchor.constraint(equalTo: subviewOne.trailingAnchor, constant: 10),
+            subviewTwo.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            subviewTwo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            subviewTwo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        ]
     }
 }
 
