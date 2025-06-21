@@ -64,6 +64,7 @@ class EditProfileViewController: UIViewController {
         label.text = "TEST"
         label.font = .systemFont(ofSize: 24)
         label.textColor = .white
+        label.textAlignment = .center
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -71,7 +72,8 @@ class EditProfileViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
 }
