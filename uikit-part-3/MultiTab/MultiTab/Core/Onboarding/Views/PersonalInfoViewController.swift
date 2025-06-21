@@ -120,6 +120,8 @@ class PersonalInfoViewController: UIViewController {
     }
     
     @objc private func didTapConfirmButton() {
+        view.endEditing(true)
+        
         let alert = UIAlertController(
             title: "Confirm Information",
             message: """
