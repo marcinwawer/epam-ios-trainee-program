@@ -65,5 +65,6 @@ extension TopRatedSeriesView {
         .padding()
         .background(.ultraThinMaterial, in: .capsule)
         .padding(.horizontal)
+        .padding(.bottom, 4)
     }
 }
