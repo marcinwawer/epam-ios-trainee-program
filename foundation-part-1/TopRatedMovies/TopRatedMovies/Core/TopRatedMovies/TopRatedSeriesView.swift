@@ -7,7 +7,7 @@ struct TopRatedSeriesView: View {
     
     var body: some View {
         NavigationStack {
-            Group {
+            VStack {
                 if vm.isLoading {
                     ProgressView()
                 } else {
@@ -15,10 +15,10 @@ struct TopRatedSeriesView: View {
                         SeriesCard(series: $0)
                     }
                     .listStyle(.plain)
-                    
-                    navigationButtons
-                        .padding(.vertical, 4)
                 }
+                
+                navigationButtons
+                    .padding(.vertical, 4)
             }
             .navigationTitle("Top Series 🍿")
             .task {
@@ -62,7 +62,8 @@ extension TopRatedSeriesView {
             .disabled(currentPage == vm.totalPages)
             .frame(maxWidth: .infinity, alignment: .trailing)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 5)
+        .padding()
+        .background(.ultraThinMaterial, in: .capsule)
+        .padding(.horizontal)
     }
 }
