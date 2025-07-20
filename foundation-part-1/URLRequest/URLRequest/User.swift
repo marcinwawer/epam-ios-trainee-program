@@ -1,10 +1,3 @@
-//
-//  User.swift
-//  URLRequest
-//
-//  Created by Marcin Wawer on 12-07-2025.
-//
-
 import Foundation
 
 struct User: Codable {

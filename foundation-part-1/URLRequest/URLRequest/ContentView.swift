@@ -1,13 +1,11 @@
-//
-//  ContentView.swift
-//  URLRequest
-//
-//  Created by Marcin Wawer on 12-07-2025.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    
+    private enum Constants {
+        static let usersURLString = "https://jsonplaceholder.typicode.com/users"
+    }
+
     
     @State private var emails: [String] = []
     
@@ -28,14 +26,6 @@ struct ContentView: View {
 #Preview {
     NavigationStack {
         ContentView()
-    }
-}
-
-// MARK: - CONSTANTS
-extension ContentView {
-    
-    private enum Constants {
-        static let usersURLString = "https://jsonplaceholder.typicode.com/users"
     }
 }
 
