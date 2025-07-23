@@ -35,7 +35,7 @@ struct ImageGridView: View {
     }
 }
 
-
+/*
  extension ImageGridView {
  
      init() {
@@ -50,4 +50,4 @@ struct ImageGridView: View {
  #Preview {
      ImageGridView()
  }
-
+*/
