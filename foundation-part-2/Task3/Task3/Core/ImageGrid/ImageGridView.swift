@@ -35,14 +35,14 @@ struct ImageGridView: View {
     }
 }
 
-/*
+
  extension ImageGridView {
  
      init() {
          let bundle: BundleProtocol = Bundle.main
          let configLoader = JSONConfig(bundle: bundle, fileName: "config", fileExtension: "json")
-         let imageBundle = DefaultImageBundleImpl(bundle: bundle, fileExtension: "jpg")
-         let vm = ImageGridViewModel(configLoader: configLoader, imageBundle: imageBundle)
+         let imageBundle = BundleImageLoader(bundle: bundle, fileExtension: "jpg")
+         let vm = ImageGridViewModel(configLoader: configLoader, imageLoader: imageBundle)
          self.init(viewModel: vm)
      }
  }
@@ -50,4 +50,4 @@ struct ImageGridView: View {
  #Preview {
      ImageGridView()
  }
-*/
+

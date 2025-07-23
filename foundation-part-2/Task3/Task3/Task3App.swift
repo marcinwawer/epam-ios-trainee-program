@@ -8,8 +8,8 @@ struct BundledImagesApp: App {
     init() {
         let bundle: BundleProtocol = Bundle.main
         let configLoader = JSONConfig(bundle: bundle, fileName: "config", fileExtension: "json")
-        let imageBundle = DefaultImageBundleImpl(bundle: bundle, fileExtension: "jpg")
-        viewModel = ImageGridViewModel(configLoader: configLoader, imageBundle: imageBundle)
+        let imageLoader = BundleImageLoader(bundle: bundle, fileExtension: "jpg")
+        viewModel = ImageGridViewModel(configLoader: configLoader, imageLoader: imageLoader)
     }
     
     var body: some Scene {

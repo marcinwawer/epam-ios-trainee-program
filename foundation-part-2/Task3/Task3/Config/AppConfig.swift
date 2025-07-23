@@ -6,8 +6,3 @@ struct AppConfig: Decodable {
     let gridColumns: Int
     let gridName: String
 }
-
-protocol ConfigLoader {
-    
-    func loadConfig() throws -> AppConfig
-}
