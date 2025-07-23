@@ -2,7 +2,7 @@ import SwiftUI
 import Observation
 
 @MainActor @Observable
-final class ImageListViewModel: ObservableObject {
+final class ImageListViewModel {
     
     var photos: [Photo] = []
     var images: [String: UIImage] = [:]

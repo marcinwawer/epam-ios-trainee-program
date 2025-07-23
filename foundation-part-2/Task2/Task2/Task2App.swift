@@ -2,6 +2,7 @@ import SwiftUI
 
 @main
 struct Task2App: App {
+    
     let viewModel: ImageListViewModel
     
     init() {

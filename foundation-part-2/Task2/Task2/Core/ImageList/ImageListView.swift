@@ -14,7 +14,7 @@ struct ImageListView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(vm.photos) { photo in
                 listCell(photo: photo)
                     .task(id: photo.id) {
