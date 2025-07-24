@@ -11,18 +11,30 @@ class Task1ListenerViewController: UIViewController {
         return label
     }()
     
+    deinit {
+        removeObservers()
+        print("task 1 observers removed")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Task 1: Listener"
         view.backgroundColor = .systemBackground
-        
+
         view.addSubview(messageLabel)
+        addConstraints()
+        addObservers()
+    }
+    
+    private func addConstraints() {
         NSLayoutConstraint.activate([
             messageLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             messageLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             messageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
+    }
+    
+    private func addObservers() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(handleNotification),
@@ -39,7 +51,7 @@ class Task1ListenerViewController: UIViewController {
         }
     }
     
-    deinit {
+    private func removeObservers() {
         NotificationCenter.default.removeObserver(
             self,
             name: .buttonTappedNotification,

@@ -15,11 +15,18 @@ class Task1SenderViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubview(sendButton)
+        addConstraints()
+        setupSendButton()
+    }
+    
+    private func addConstraints() {
         NSLayoutConstraint.activate([
             sendButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             sendButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
+    }
+    
+    private func setupSendButton() {
         sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
     }
     
