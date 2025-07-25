@@ -1,0 +1,8 @@
+**/*.playground/timeline.xctimeline
+**/*.playground/timeline.xctimelinepage
+
+**/*.playground/xcuserdata/
+*.xcworkspace
+*.xcuserstate
+
+.DS_Store
