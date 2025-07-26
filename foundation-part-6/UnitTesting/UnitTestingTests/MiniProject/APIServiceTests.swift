@@ -31,7 +31,7 @@ final class APIServiceTests: XCTestCase {
         sut.fetchUsers(urlString: invalidURL) { result in
             switch result {
             case .failure(let error): XCTAssertEqual(error, .invalidUrl)
-            case .success: XCTFail("expected .invalidUrl error, got .success")
+            case .success: XCTFail("expected invalidUrl error, got success")
             }
             
             expectedResult.fulfill()
@@ -79,7 +79,7 @@ final class APIServiceTests: XCTestCase {
         sut.fetchUsers(urlString: validURL) { result in
             switch result {
             case .failure(let error): XCTAssertEqual(error, .parsingError)
-            case .success: XCTFail("expected parsingError, got .success")
+            case .success: XCTFail("expected parsingError, got success")
             }
         }
     }
@@ -93,7 +93,7 @@ final class APIServiceTests: XCTestCase {
         sut.fetchUsers(urlString: validURL) { result in
             switch result {
             case .failure(let error): XCTAssertEqual(error, .unexpected)
-            case .success: XCTFail("expected .unexpected, got success")
+            case .success: XCTFail("expected unexpected, got success")
             }
         }
     }
@@ -109,7 +109,7 @@ final class APIServiceTests: XCTestCase {
         
         switch result {
         case .failure(let error): XCTAssertEqual(error, .invalidUrl)
-        case .success: XCTFail("Expected .invalidUrl, but got success")
+        case .success: XCTFail("expected invalidUrl, got success")
         }
     }
 
@@ -151,7 +151,7 @@ final class APIServiceTests: XCTestCase {
         
         switch result {
         case .failure(let error): XCTAssertEqual(error, .parsingError)
-        case .success: XCTFail("expected .parsingError, got .success")
+        case .success: XCTFail("expected parsingError, got success")
         }
     }
     
@@ -164,7 +164,7 @@ final class APIServiceTests: XCTestCase {
         
         switch result {
         case .failure(let error): XCTAssertEqual(error, .unexpected)
-        case .success: XCTFail("expected .unexpected, got success")
+        case .success: XCTFail("expected unexpected, got success")
         }
     }
     
@@ -178,7 +178,7 @@ final class APIServiceTests: XCTestCase {
         
         switch result {
         case .failure(let error): XCTAssertEqual(error, .unexpected)
-        case .success: XCTFail("expected .unexpected, got .success")
+        case .success: XCTFail("expected unexpected, got success")
         }
     }
 
