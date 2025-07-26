@@ -1,0 +1,82 @@
+# Xcode user settings
+xcuserdata/
+
+# Xcode project settings
+*.xcworkspace/xcuserdata/
+**/*.xcworkspace/contents.xcworkspacedata
+*.xcodeproj/xcuserdata/
+
+# Derived Data
+DerivedData/
+
+# Compilation products
+*.o
+*.d
+
+# Compiled Static Libraries
+*.a
+*.pch
+
+# Other files and folders
+*.bak
+*.tmp
+*.swp
+
+# OS X temporary files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Swift
+.build/
+/Packages
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# SwiftLint
+swiftlint_report.html
+
+# Xcode Source Control
+*.xcscmblueprint
+
+# Obj-C/Swift specific
+*.hmap
+
+# App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
