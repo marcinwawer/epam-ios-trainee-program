@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:foundation-part-5}/Task1",
+            "name": "Debug Task1 (Task1)",
+            "program": "${workspaceFolder:foundation-part-5}/Task1/.build/debug/Task1",
+            "preLaunchTask": "swift: Build Debug Task1 (Task1)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:foundation-part-5}/Task1",
+            "name": "Release Task1 (Task1)",
+            "program": "${workspaceFolder:foundation-part-5}/Task1/.build/release/Task1",
+            "preLaunchTask": "swift: Build Release Task1 (Task1)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:foundation-part-5}/Task2",
+            "name": "Debug Task2 (Task2)",
+            "program": "${workspaceFolder:foundation-part-5}/Task2/.build/debug/Task2",
+            "preLaunchTask": "swift: Build Debug Task2 (Task2)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:foundation-part-5}/Task2",
+            "name": "Release Task2 (Task2)",
+            "program": "${workspaceFolder:foundation-part-5}/Task2/.build/release/Task2",
+            "preLaunchTask": "swift: Build Release Task2 (Task2)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:foundation-part-5}/Task3",
+            "name": "Debug Task3 (Task3)",
+            "program": "${workspaceFolder:foundation-part-5}/Task3/.build/debug/Task3",
+            "preLaunchTask": "swift: Build Debug Task3 (Task3)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:foundation-part-5}/Task3",
+            "name": "Release Task3 (Task3)",
+            "program": "${workspaceFolder:foundation-part-5}/Task3/.build/release/Task3",
+            "preLaunchTask": "swift: Build Release Task3 (Task3)"
+        }
+    ]
+}
