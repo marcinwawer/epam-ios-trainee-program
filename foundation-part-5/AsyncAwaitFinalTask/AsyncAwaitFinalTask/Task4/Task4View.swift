@@ -6,30 +6,65 @@
 //
 import SwiftUI
 
+@MainActor @Observable
+final class Task4ViewModel {
+    
+    private(set) var finished = false
+    private(set) var ballance: Int = 1000
+    
+    @ObservationIgnored private let ballanceWrapper: BallanceWrapper
+    
+    init(balanceWrapper: BallanceWrapper = BallanceWrapper()) {
+        self.ballanceWrapper = balanceWrapper
+    }
+    
+    func startUpdate() async {
+        await reset()
+        
+        await withTaskGroup { taskGroup in
+            for _ in 0...999 {
+                taskGroup.addTask {
+                    await self.ballanceWrapper.decrement()
+                    print(await self.ballanceWrapper.currentValue)
+                }
+            }
+        }
+        
+        ballance = await ballanceWrapper.currentValue
+        finished = true
+    }
+    
+    func reset() async {
+        await ballanceWrapper.reset(to: 1000)
+        ballance = 1000
+        finished = false
+    }
+}
+
 struct Task4View: View {
-    var api = Task4ViewAPI()
-    @State var finished: Bool = false
-    @State var ballance: Int = 1000
+    @State var vm: Task4ViewModel
+    
+    init(vm: Task4ViewModel = Task4ViewModel()) {
+        self.vm = vm
+    }
     
     var body: some View {
         VStack {
             Text("Starting ballance: 1000")
-            if finished {
-                Text("Final balance: \(ballance)")
-                Text(ballance == 0 ? "Success" : "Failure")
+            
+            if vm.finished {
+                Text("Final balance: \(vm.ballance)")
+                Text(vm.ballance == 0 ? "Success" : "Failure")
             }
+            
             Button {
-                if finished {
-                    api.ballance = 1000
-                    finished = false
+                if vm.finished {
+                    Task { await vm.reset() }
                 } else {
-                    Task {
-                        ballance = await api.startUpdate()
-                        self.finished = true
-                    }
+                    Task { await vm.startUpdate() }
                 }
             } label: {
-                if finished {
+                if vm.finished {
                     Text("Reset")
                 } else {
                     Text("Start")
@@ -56,5 +91,26 @@ class Task4ViewAPI: @unchecked Sendable {
         }
         
         return ballance
+    }
+}
+
+actor BallanceWrapper {
+    
+    let api: Task4ViewAPI
+    
+    init(api: Task4ViewAPI = Task4ViewAPI()) {
+        self.api = api
+    }
+    
+    var currentValue: Int {
+        api.ballance
+    }
+    
+    func decrement() {
+        api.ballance -= 1
+    }
+    
+    func reset(to newBallance: Int) {
+        api.ballance = newBallance
     }
 }

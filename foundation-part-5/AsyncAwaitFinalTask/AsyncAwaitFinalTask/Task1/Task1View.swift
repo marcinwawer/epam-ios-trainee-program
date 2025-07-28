@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Task1View: View, @unchecked Sendable {
+struct Task1View: View {
     let task1API = Task1API()
     @State var fact = "To get random number fact presss button below"
 
@@ -16,8 +16,14 @@ struct Task1View: View, @unchecked Sendable {
             Text(fact)
                 .padding()
             Button(action: {
-                task1API.getTrivia(for: .none) { fact in
-                    self.fact = fact ?? "loading error"
+                Task {
+                    let fact = try? await task1API.getTrivia(for: .none)
+                    
+                    await MainActor.run {
+                        if let fact {
+                            self.fact = fact
+                        }
+                    }
                 }
             }, label: { Text("Click me") })
         }
@@ -28,6 +34,32 @@ struct Task1View: View, @unchecked Sendable {
     Task1View()
 }
 
+actor Task1API {
+    let baseURL = "http://numbersapi.com"
+    let triviaPath = "random/trivia"
+    private var session = URLSession.shared
+    
+    func getTrivia(for number: Int?)  async throws -> String {
+        guard let url = URL(string: baseURL)?.appendingPathComponent(triviaPath) else {
+            throw URLError(.badURL)
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+        
+        let trivia = String(data: data, encoding: .utf8)
+        guard let trivia else {
+            throw URLError(.cannotDecodeContentData)
+        }
+        
+        return trivia
+    }
+}
+
+/*
 class Task1API: @unchecked Sendable {
     let baseURL = "http://numbersapi.com"
     let triviaPath = "random/trivia"
@@ -56,3 +88,4 @@ class Task1API: @unchecked Sendable {
     }
 
 }
+*/

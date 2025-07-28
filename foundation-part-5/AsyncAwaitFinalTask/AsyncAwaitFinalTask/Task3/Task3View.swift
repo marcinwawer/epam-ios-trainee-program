@@ -50,17 +50,35 @@ class Task3API {
         case weak, strong, excellent, unknown
     }
     
+    private var task: Task<Void, Never>?
+    
+//    func signalStrength() -> AsyncStream<SignalStrenght> {
+//        return AsyncStream { continuation in
+//            Task {
+//                try? await Task.sleep(for: .seconds(1))
+//                continuation.yield(with: .success([SignalStrenght.weak, .strong, .excellent].randomElement() ?? .unknown))
+//            }
+//        }
+//    }
+    
     func signalStrength() -> AsyncStream<SignalStrenght> {
-        return AsyncStream { continuation in
-            Task {
-                try? await Task.sleep(for: .seconds(1))
-                continuation.yield(with: .success([SignalStrenght.weak, .strong, .excellent].randomElement() ?? .unknown))
+        return AsyncStream { [weak self] continuation in
+            let task = Task {
+                while !Task.isCancelled {
+                    try? await Task.sleep(for: .seconds(1))
+                    continuation.yield(with: .success([SignalStrenght.weak, .strong, .excellent].randomElement() ?? .unknown))
+                }
+                
+                continuation.finish()
             }
+            
+            self?.task = task
         }
     }
     
     func cancel() {
-        // ????
+        task?.cancel()
+        task = nil
     }
 }
 
