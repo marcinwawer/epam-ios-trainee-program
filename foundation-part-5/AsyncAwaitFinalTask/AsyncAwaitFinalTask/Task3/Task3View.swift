@@ -40,8 +40,8 @@ struct Task3View: View {
                     Text("Start monitoring")
                 }
             }
-
         }
+        .onDisappear { api.cancel() }
     }
 }
 

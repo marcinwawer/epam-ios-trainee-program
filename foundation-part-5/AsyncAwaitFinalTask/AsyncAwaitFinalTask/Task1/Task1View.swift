@@ -39,7 +39,7 @@ actor Task1API {
     let triviaPath = "random/trivia"
     private var session = URLSession.shared
     
-    func getTrivia(for number: Int?)  async throws -> String {
+    func getTrivia(for number: Int?) async throws -> String {
         guard let url = URL(string: baseURL)?.appendingPathComponent(triviaPath) else {
             throw URLError(.badURL)
         }
