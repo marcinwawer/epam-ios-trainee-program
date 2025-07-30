@@ -25,7 +25,7 @@ final class Task4ViewModel {
             for _ in 0...999 {
                 taskGroup.addTask {
                     await self.ballanceWrapper.decrement()
-                    print(await self.ballanceWrapper.currentValue)
+//                    print(await self.ballanceWrapper.currentValue)
                 }
             }
         }
