@@ -6,6 +6,14 @@ struct ContentView: View {
         NavigationStack {
             List {
                 taskLink(number: 1, destination: Task1View())
+                taskLink(number: 2, destination: Task2View())
+                taskLink(number: 3, destination: Task3View())
+                taskLink(number: 4, destination: Task4View())
+                taskLink(number: 5, destination: Task5View())
+                taskLink(number: 6, destination: Task6View())
+                taskLink(number: 7, destination: Task7View())
+                taskLink(number: 8, destination: Task8View())
+                taskLink(number: 9, destination: Task9View())
             }
             .navigationTitle("Tasks")
         }
