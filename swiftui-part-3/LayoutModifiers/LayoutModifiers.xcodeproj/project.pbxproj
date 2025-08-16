@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		840B10EA2E4FA06E00FAB539 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		840B10EA2E4FA06E00FAB539 /* LayoutModifiers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutModifiers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		840B10EC2E4FA06E00FAB539 /* Tasks */ = {
+		840B10EC2E4FA06E00FAB539 /* LayoutModifiers */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Tasks;
+			path = LayoutModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		840B10E12E4FA06E00FAB539 = {
 			isa = PBXGroup;
 			children = (
-				840B10EC2E4FA06E00FAB539 /* Tasks */,
+				840B10EC2E4FA06E00FAB539 /* LayoutModifiers */,
 				840B10EB2E4FA06E00FAB539 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +40,7 @@
 		840B10EB2E4FA06E00FAB539 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				840B10EA2E4FA06E00FAB539 /* Tasks.app */,
+				840B10EA2E4FA06E00FAB539 /* LayoutModifiers.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		840B10E92E4FA06E00FAB539 /* Tasks */ = {
+		840B10E92E4FA06E00FAB539 /* LayoutModifiers */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 840B10F52E4FA07000FAB539 /* Build configuration list for PBXNativeTarget "Tasks" */;
+			buildConfigurationList = 840B10F52E4FA07000FAB539 /* Build configuration list for PBXNativeTarget "LayoutModifiers" */;
 			buildPhases = (
 				840B10E62E4FA06E00FAB539 /* Sources */,
 				840B10E72E4FA06E00FAB539 /* Frameworks */,
@@ -61,13 +61,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				840B10EC2E4FA06E00FAB539 /* Tasks */,
+				840B10EC2E4FA06E00FAB539 /* LayoutModifiers */,
 			);
-			name = Tasks;
+			name = LayoutModifiers;
 			packageProductDependencies = (
 			);
 			productName = Tasks;
-			productReference = 840B10EA2E4FA06E00FAB539 /* Tasks.app */;
+			productReference = 840B10EA2E4FA06E00FAB539 /* LayoutModifiers.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 840B10E52E4FA06E00FAB539 /* Build configuration list for PBXProject "Tasks" */;
+			buildConfigurationList = 840B10E52E4FA06E00FAB539 /* Build configuration list for PBXProject "LayoutModifiers" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				840B10E92E4FA06E00FAB539 /* Tasks */,
+				840B10E92E4FA06E00FAB539 /* LayoutModifiers */,
 			);
 		};
 /* End PBXProject section */
@@ -305,7 +305,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		840B10E52E4FA06E00FAB539 /* Build configuration list for PBXProject "Tasks" */ = {
+		840B10E52E4FA06E00FAB539 /* Build configuration list for PBXProject "LayoutModifiers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				840B10F32E4FA07000FAB539 /* Debug */,
@@ -314,7 +314,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		840B10F52E4FA07000FAB539 /* Build configuration list for PBXNativeTarget "Tasks" */ = {
+		840B10F52E4FA07000FAB539 /* Build configuration list for PBXNativeTarget "LayoutModifiers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				840B10F62E4FA07000FAB539 /* Debug */,
