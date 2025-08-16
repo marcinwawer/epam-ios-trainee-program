@@ -3,9 +3,12 @@ import SwiftUI
 struct SecondView: View {
     
     var body: some View {
-        VStack {
-            Text("Hello, SwiftUI Navigation!")
+        VStack(spacing: 20) {
+            Image(systemName: "hand.wave")
                 .font(.largeTitle)
+            
+            Text("Hello, SwiftUI Navigation!")
+                .font(.title)
                 .multilineTextAlignment(.center)
         }
         .padding()

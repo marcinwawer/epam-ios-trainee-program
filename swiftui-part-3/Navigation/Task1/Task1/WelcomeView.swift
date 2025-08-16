@@ -3,9 +3,12 @@ import SwiftUI
 struct WelcomeView: View {
     
     var body: some View {
-        VStack(spacing: 40) {
-            Text("Welcome!")
+        VStack(spacing: 20) {
+            Image(systemName: "hand.thumbsup")
                 .font(.largeTitle)
+            
+            Text("Welcome!")
+                .font(.title)
             
             NavigationLink(destination: SecondView()) {
                 Text("Navigate")
