@@ -7,7 +7,7 @@ struct EmbeddedViewSUI: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                Text("SwiftUI in UIKit")
+                Text("Hello, from SwiftUI!")
                     .font(.title2)
                 
                 Button {
