@@ -18,7 +18,7 @@ class Library {
             throw LibraryError.itemNotFound 
         }
 
-        guard let borrowable = item as? Borrowable else {
+        guard var borrowable = item as? Borrowable else {
             throw LibraryError.itemNotBorrowable
         }
 
@@ -26,17 +26,17 @@ class Library {
             throw LibraryError.alreadyBorrowed
         }
 
-        // no need for that optional chaining, because I checked it earlier, but it's stated in 6. to use optional chaining, normally I would use the commented lines at the end of the func
-        guard (items[id] as? Borrowable)?.borrow(returnDate: Date().addingTimeInterval(60 * 60 * 24 * 30)) == true else {
+        // no need for that optional chaining, because I checked it earlier, but it's stated in 6. to use optional chaining, normally I would use the guard at the end of the func
+        // guard (items[id] as? Borrowable)?.borrow(returnDate: Date().addingTimeInterval(60 * 60 * 24 * 30)) == true else {
+        //     throw LibraryError.pastReturnDate
+        // }
+
+        // return item
+
+        guard borrowable.borrow(returnDate: Date().addingTimeInterval(60 * 60 * 24 * 30)) else {
             throw LibraryError.pastReturnDate
         }
 
         return item
-
-        // guard borrowable.borrow(returnDate: Date().addingTimeInterval(60 * 60 * 24 * 30)) else {
-        //     throw LibraryError.pastReturnDate
-        // } 
-
-        // return item
     }
 }

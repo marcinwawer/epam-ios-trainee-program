@@ -7,11 +7,24 @@ protocol Borrowable {
     var isBorrowed: Bool { get set }
 
     mutating func checkIn()
-    
-    func borrow(returnDate: Date) -> Bool
+    mutating func borrow(returnDate: Date) -> Bool
 }
 
 extension Borrowable {
+
+    mutating func borrow(returnDate: Date) -> Bool {
+        guard returnDate > Date() else {
+            print("Return date cannot be before borrow date. Book not borrowed.")
+            return false
+        }
+
+        isBorrowed = true
+        borrowDate = Date()
+        self.returnDate = returnDate
+
+        print("Book successfully borrowed. Return date \(String(describing: returnDate))")
+        return true
+    }
 
     func isOverdue() -> Bool {
         guard let returnDate else { return false }
